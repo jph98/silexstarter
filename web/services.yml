@@ -1,0 +1,16 @@
+parameters:    
+    mailer.transport: sendmail
+
+services:
+
+    # @mailer - inject transport (String) via constructor injection (arguments)
+    mailer:
+        class:     Mailer
+        arguments: ["%mailer.transport%"]
+
+    # # @newsletter_manager - inject mailer via setter injection (calls)
+    # newsletter_manager:
+    #     class:     NewsletterManager
+    #     calls:
+    #         - [setMailer, ["@mailer"]]
+    # You can also do property injection (via public fields), but this isn't advised
