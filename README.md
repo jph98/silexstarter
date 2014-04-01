@@ -1,0 +1,4 @@
+silexstarter
+============
+
+Starter Silex project
